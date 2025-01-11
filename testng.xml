@@ -1,0 +1,24 @@
+<suite name="LambdaTest-Certifications" verbose="2" preserve-order="true" parallel="tests" thread-count="3">
+    <test name="LambdaTest Chrome 130" parallel="tests">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="130"/>
+        <parameter name="os" value="win10"/>
+        <classes>
+            <class name="testcase.Test1"/>
+            <class name="testcase.Test2"/>
+            <class name="testcase.Test3"/>
+        </classes>
+    </test>
+
+ <test name="LambdaTest safari" parallel="tests">
+     <parameter name="browser" value="safari"/>
+     <parameter name="version" value="17"/>
+     <parameter name="os" value="MacOS Sonoma"/>
+    <classes>
+        <class name="testcase.Test1"/>
+        <class name="testcase.Test2"/>
+        <class name="testcase.Test3"/>
+    </classes>
+</test>
+
+</suite>

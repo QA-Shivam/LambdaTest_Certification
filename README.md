@@ -83,7 +83,7 @@ Usage
 3. Write new test cases in src/test/java/testcase by extending BaseTest.
 
 
-4. Run the test suite using your preferred test runner (e.g., Maven, TestNG, JUnit).
+4. Run the test suite using your preferred test runner (e.g., Maven, TestNG).
 
 
 

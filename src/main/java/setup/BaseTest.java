@@ -3,6 +3,7 @@ package setup;
 import config.ConfigLoader;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.log4testng.Logger;
@@ -32,11 +33,16 @@ public class BaseTest extends ObjectsFactory {
             LOGGER.info("WebDriver initialized successfully for thread: " + Thread.currentThread().getId());
             initPageObjects(WebDriverManager.getDriver());
             getDriver().manage().window().maximize();
-            getDriver().get(appUrl);
-            LOGGER.info("Navigated to: " + appUrl);
         } else {
             throw new IllegalStateException("WebDriver initialization failed for thread: " + Thread.currentThread().getId());
         }
+    }
+    @BeforeMethod
+    public void navigateToAppUrl() {
+        ConfigLoader config = new ConfigLoader();
+        String appUrl = config.getProperty("url");
+        getDriver().get(appUrl);
+        LOGGER.info("Navigated to: " + appUrl);
     }
 
     @AfterTest(alwaysRun = true)
